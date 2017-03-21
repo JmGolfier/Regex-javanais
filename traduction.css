@@ -1,0 +1,13 @@
+.trad_body, .trad_title {
+    display: flex;
+    justify-content: center;
+}
+
+.select_lang, .form_trad {
+    align-items : baseline;
+}
+
+.select_lang, .form_trad, .trad_button {
+    padding-top: 10px;
+    padding-left: 10px;
+}
