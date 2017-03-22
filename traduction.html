@@ -22,11 +22,25 @@
             <textarea rows="3" placeholder="zone de resultat..." class="result_trad" id="resultTrad" disabled></textarea>
         </div>
         <div class="trad_button">
-            <button name="buttonTrad" onclick="traducteur.getTraduction()">Traduire</button>
+            <button name="buttonTrad" onclick="getTraduction()">Traduire</button>
         </div>
     </div>
 </div>
 </div>
 <script src="traduction.js"></script>
+<script>
+    var langueCible = document.getElementById('selectLangue');
+    var stringATraduire = document.getElementById('initTrad');
+    var stringResult = document.getElementById('resultTrad');
+
+    function getTraduction() {
+        if (stringATraduire.value !== '' || stringATraduire.value !== undefined || stringATraduire.value !== null) {
+            if (langueCible.value === 'Francais')
+                stringResult.value = traducteur.francaisVersJavanais(stringATraduire.value);
+            else
+                stringResult.value = traducteur.javanaisVersFrancais(stringATraduire.value);
+        }
+    }
+</script>
 </body>
 </html>
